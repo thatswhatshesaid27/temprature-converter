@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <script>
+    function showResult() {
+      let res = 0.0;
+      let val = document.getElementById("input").value;
+      let converType = document.getElementById("tempType").value;
+      let conversion = document.getElementById("converType").value;
+      console.log(val);
+      console.log(converType);
+      console.log(conversion);
+      if (converType == "celsius" && conversion == "fahrenheit") {
+        res = (val * 9) / 5 + 32;
+        console.log(res)
+        document.getElementById("res").innerHTML=res
+      }
+      else if(converType=='fahrenheit' && conversion=='celsius'){
+        res=  (val - 32) * 5/9
+        document.getElementById("res").innerHTML=res
+      }
+      else if(converType=='celsius' && conversion=='celsius'){
+        res =  val
+        document.getElementById("res").innerHTML=res
+      }
+      else if(converType=='fahrenheit' && conversion=='fahrenheit'){
+        res =  val
+        document.getElementById("res").innerHTML=res
+      }
+    }
+  </script>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div>
+        <h1>Enter Temprature</h1>
+        <label for="">Degree:</label><br />
+        <input type="text" id="input" placeholder="0" />
+        <select name="choose" id="tempType">
+          <option value="celsius">C&deg</option>
+          <option value="fahrenheit">&#8457</option>
+          <!-- <option value="kelvin">K</option> -->
+        </select>
+        <br />
+        <label for="">Convert in</label><br />
+        <select name="convertType" id="converType">
+          <option value="fahrenheit">Fahrenheit</option>
+          <option value="celcius">Celcius</option>
+          <!-- <option value="kelvin">Kelvin</option> -->
+        </select>
+        <br />
+        <br />
+        <button onclick="showResult()">Convert -></button>
+      </div>
+    </div>
+      <div class="result">
+        <h2 id="res">Result</h1>
+      </div>
+    </div>
+  </body>
+</html>
