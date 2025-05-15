@@ -1,7 +1,7 @@
 *{
     margin:0px;
     padding:0px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+    font-family: 'Calibri'
 }
 
 .container{
@@ -10,12 +10,15 @@
     min-height: 100vh;
     padding: 100px;
     display: flex;
-
 }
 
 h1{
     color: #007B83;
     font-size: 30px;
+}
+
+.choose{
+    border-right: none;
 }
 
 .card{
@@ -28,6 +31,13 @@ h1{
     /* gap: 10px; */
 }
 
+.section1{
+    margin-top: 0%;
+    box-sizing: border-box;
+    max-width: 300px;
+    max-height: 20px;
+    gap: 0;
+}
 .card div{
     box-sizing: border-box;
     width: 100%;
@@ -63,13 +73,49 @@ select{
 button{
     border-radius: 30px;
     width: 30%;
-    height: 80%;
-    padding: 10px;
+    height: 100%;
+    padding: 20px;
     background-color:#007B83;
     color: white;
     border-style: none;
+    font-size: 16px;
 }
 
 #res{
     color: white;
+    font-size: 80px;
+    font-weight: bold;
 }
+
+.result span{
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    vertical-align: super;
+}
+
+.card #tempType{
+    gap: none;
+}
+
+
+#converType{
+    height: 30px;
+}
+
+
+#input{
+    border-right: none;
+    width: 30%;
+    height: 30px;
+}
+
+#input::placeholder{
+    text-align: left;
+    padding:10px
+}
+.temp{
+    display: flex;
+    gap: none;
+}
+

@@ -8,29 +8,42 @@
   </head>
   <script>
     function showResult() {
-      let res = 0.0;
+      let farenheit = '℉';
+      let celcius = '℃';
+      let res = 0;
       let val = document.getElementById("input").value;
       let converType = document.getElementById("tempType").value;
       let conversion = document.getElementById("converType").value;
       console.log(val);
       console.log(converType);
       console.log(conversion);
-      if (converType == "celsius" && conversion == "fahrenheit") {
-        res = (val * 9) / 5 + 32;
+      if (converType == "celcius" && conversion == "fahrenheit") {
+        res = `${(val * 9) / 5 + 32}`;
         console.log(res)
+        console.log(document.getElementById("symbol").value)
         document.getElementById("res").innerHTML=res
+        console.log(document.getElementById("res").innerHTML)
+        // console.log(document.getElementById("symbol").innerHTML)
+        document.getElementById("symbol").innerHTML=farenheit
       }
-      else if(converType=='fahrenheit' && conversion=='celsius'){
-        res=  (val - 32) * 5/9
+      else if(converType=='fahrenheit' && conversion=='celcius'){
+        res=  `${(val - 32) * 5/9}`
         document.getElementById("res").innerHTML=res
+        document.getElementById("symbol").innerHTML=celcius
+
       }
-      else if(converType=='celsius' && conversion=='celsius'){
-        res =  val
+      else if(converType=='celcius' && conversion=='celcius'){
+        console.log('third condition true')
+        res = `${val}`
         document.getElementById("res").innerHTML=res
+        document.getElementById("symbol").innerHTML=celcius
+
       }
       else if(converType=='fahrenheit' && conversion=='fahrenheit'){
-        res =  val
+        res =  `${val}`
         document.getElementById("res").innerHTML=res
+        document.getElementById("symbol").innerHTML=farenheit
+
       }
     }
   </script>
@@ -40,14 +53,17 @@
         <div>
         <h1>Enter Temprature</h1>
         <label for="">Degree:</label><br />
+        <span class="temp">
         <input type="text" id="input" placeholder="0" />
         <select name="choose" id="tempType">
-          <option value="celsius">C&deg</option>
+          <option value="celcius">C&deg</option>
           <option value="fahrenheit">&#8457</option>
           <!-- <option value="kelvin">K</option> -->
         </select>
+        </span>
+ 
         <br />
-        <label for="">Convert in</label><br />
+        <label for="">Convert in:</label><br />
         <select name="convertType" id="converType">
           <option value="fahrenheit">Fahrenheit</option>
           <option value="celcius">Celcius</option>
@@ -55,11 +71,12 @@
         </select>
         <br />
         <br />
-        <button onclick="showResult()">Convert -></button>
+        <button onclick="showResult()">Convert  &#8594;</button>
       </div>
     </div>
       <div class="result">
-        <h2 id="res">Result</h1>
+        <h2 id="res">33 <span id="symbol">℉</span>
+       </h2> 
       </div>
     </div>
   </body>
