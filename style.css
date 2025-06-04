@@ -88,7 +88,7 @@ button{
 }
 
 .result span{
-    font-size: 30px;
+    font-size: 40px;
     font-weight: bold;
     color: white;
     vertical-align: super;
@@ -99,7 +99,7 @@ button{
 }
 
 
-#converType{
+#convertType{
     height: 30px;
 }
 
@@ -108,12 +108,15 @@ button{
     border-right: none;
     width: 30%;
     height: 30px;
+    padding: 10px;
+    font-size: 20px;
 }
 
 #input::placeholder{
     text-align: left;
     padding:10px
 }
+
 .temp{
     display: flex;
     gap: none;
